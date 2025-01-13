@@ -1,0 +1,17 @@
+myshop/settings.py: line 130
+<<<LOGIN_URL = '/shop/login/'  # URL to redirect for login>>>
+change path to '/templates/Login'
+
+May need to change path of urls patterns in file
+myshop/urls.py
+
+May need to change path of urls patterns in file
+shop/urls.py
+
+Paths change in file: shop/views.py
+line 16,
+line 42,
+line 39 >> *signup.html doesn't exist*
+
+In templates/Cart.html:
+469 line>> checkout.js is missing

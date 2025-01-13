@@ -13,7 +13,7 @@ def login_view(request):
             return redirect('home')
         else:
             messages.error(request, 'Invalid username or password.')
-    return render(request, 'shop/login.html')  # Correct path to login template
+    return render(request, '../templates/Login.html')  # Correct path to login template
 
 def signup_view(request):
     if request.method == 'POST':
@@ -39,5 +39,5 @@ def signup_view(request):
     return render(request, 'shop/signup.html')  # Correct path to signup template
 
 def home_view(request):
-    return render(request, 'shop/home.html')  # Correct path to home template
+    return render(request, '../templates/Home.html')  # Correct path to home template
 
