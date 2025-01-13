@@ -1,0 +1,286 @@
+<html>
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <style>
+            /* Navbar Styles */
+            .navbar {
+                position: fixed;
+                top: 0;
+                width: 100%;
+                background-color: transparent !important; /* No background color */
+                z-index: 1000; /* Ensure it's on top of other elements */
+                box-shadow: none; /* Remove any shadow */
+                transition: none; /* Remove transition if not needed */
+            }
+
+            /* Ensure the navbar-collapse also has no background */
+            .navbar-collapse {
+                background-color: transparent !important; /* No background color for collapsed navbar */
+            }
+
+
+            .navbar-brand img {
+                max-width: 250px; /* Adjust logo size */
+                margin-left: 30px;
+            }
+
+            .navbar-logo {
+                width: 250px; /* Adjust as per your requirement */
+                filter: drop-shadow(2.5px 2.5px 3px rgb(255, 255, 255)); /* Drop shadow effect */
+            }
+
+            .navbar-logo:hover {
+                filter: drop-shadow(2.5px 2.5px 3px rgb(255, 255, 255)); /* Stronger shadow on hover */
+            }
+
+
+            /* Login form */
+            body {
+                background-image: url("images/dhruvi.jpg");
+                background-size: cover;
+                background-position: center;
+                height: 100vh; /* Ensure body takes full height */
+                margin: 0; /* Remove default margin */
+                display: flex; /* Use Flexbox for centering */
+                align-items: center; /* Center vertically */
+                justify-content: center; /* Center horizontally */
+            }
+        
+            div {
+                position: relative; /* Change to relative for proper positioning of ::before */
+                width: 400px;
+                height: auto;
+                color: rgb(0, 0, 0);
+                border-radius: 20px;
+                box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.75);
+                background-size: cover;
+                background-position: center;
+                overflow: hidden;
+                text-transform: uppercase;
+                transition: box-shadow 0.3s ease;
+                display: flex; /* Center content inside the div */
+                align-items: center; /* Center vertically */
+                justify-content: center; /* Center horizontally */
+            }
+
+            /*Adjusted before pseudo-element */
+            div::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-size: cover;
+                background-color: rgba(255, 255, 255, 0.90)!important;
+                background-position: center;
+                opacity: 65%; /* Adjust the opacity here */
+                z-index: -1; /* Ensure it stays behind the content */
+                border-radius: 20px; /* Match the border-radius of the main div */
+           }
+
+            #form-container {
+                display: flex;
+                justify-content: center!important;
+                flex-direction: column;
+                align-items: center;
+                width: 100%; /* Ensure it uses full width of the parent */
+                height: 100%; /* Make sure it takes full height of the parent */
+                padding: 0; /* Ensure no padding is added */
+                margin: 0; /* Ensure no margin is added */
+            }
+        
+            div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0 auto; /* Center horizontally */
+            }
+
+            /* Add glowing effect on hover */
+            div:hover {
+                box-shadow: 
+                    0px 0px 20px rgba(11, 108, 38, 0.4),  /* Shade of #0B6C26 */
+                    0px 0px 40px rgba(76, 175, 80, 0.6), /* Shade of #4CAF50 */
+                    0px 0px 60px rgba(107, 222, 80, 0.2); /* Light shade for additional glow effect */
+                }
+        
+            div::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: rgba(255, 255, 255, 0.100)!important; /* Background color for the pseudo-element */
+                opacity: 0.65; /* Opacity for the pseudo-element */
+                z-index: -1; /* Ensure it stays behind the content */
+                border-radius: 20px; /* Match the border-radius of the main div */
+            }
+        
+            #form-container {
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+                width: 100%; /* Ensure it uses full width of the parent */
+                height: 100%; /* Make sure it takes full height of the parent */
+                padding: 0; /* Ensure no padding is added */
+                margin: 0; /* Ensure no margin is added */
+            }
+        
+            #login-form, #registration-form {
+                box-sizing: border-box;
+                padding: 50px;
+                width: 100%;
+                height: auto;
+                backdrop-filter: brightness(100%);
+                display: flex;
+                flex-direction: column;
+                gap: 3px;
+                background-color: rgba(255, 255, 255, 0.65); /* White background with 65% opacity */
+                border-radius: 20px; /* Add border radius for a better look */
+                position: relative; /* Ensures proper stacking with the pseudo-element */
+            }
+        
+            h1 {
+                font-weight: normal;
+                font-size: 25px;
+                text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+                margin-bottom: 40px;
+            }
+        
+            p {
+                font-size: 12px;
+                text-align: center;
+            }
+        
+            label {
+                color: rgb(0, 0, 0);
+                text-transform: uppercase;
+                font-size: 16px;
+                letter-spacing: 1px;
+                padding-left: 10px;
+            }
+        
+            /* Input fields glow on hover */
+            input {
+                background: rgba(0, 0, 0, 0.238);
+                height: 40px;
+                width: 100%!important;
+                line-height: 40px;
+                border-radius: 20px;
+                padding: 0px 20px;
+                border: 2px solid rgba(58, 58, 67, 0.833);
+                margin-bottom: 20px;
+                color: rgb(0, 0, 0);
+                box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+                transition: box-shadow 0.3s ease;
+            }
+        
+            /* Add glow effect to input fields on hover */
+            input:hover {
+                box-shadow: 0px 0px 10px hsl(240, 3%, 32%);
+            }
+        
+            /* Button glow effect */
+            button {
+                background: rgb(0, 110, 255);
+                height: 40px;
+                width: 100px;
+                line-height: 40px;
+                border-radius: 40px;
+                border: none;
+                margin: 10px auto;
+                box-shadow: 0px 0px 5px rgb(0, 8, 255);
+                color: white; /* Ensure text color is white */
+                font-size: 15px;
+                text-align: center;
+                transition: box-shadow 0.3s ease;
+            }
+        
+            /* Add glow effect to button on hover */
+            button:hover {
+                box-shadow: 0px 0px 50px rgba(0, 110, 255, 0.7);
+            }
+        </style>
+        
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <a class="navbar-brand" href="Home.html"> 
+                <img class="navbar-logo" src="images/agrobuddy.png" alt="AgroBuddy Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </nav>
+        
+{% block content %}
+<div>
+    <section id="form-container" > 
+        
+        <div id="registration-form" style="display: none;">  
+            <h1>SIGN UP</h1>
+            <form method="POST">  
+              <!--{% csrf_token %} -->
+                <label>Username</label>
+                <input type="text" name="username" required>
+                <label>Email Id</label>
+                <input type="email" name="email" required>
+                <label>Phone No</label>
+                <input type="text" name="phone" required>
+                <label>Password</label>
+                <input type="password" name="password" required>
+                <button type="submit">SUBMIT</button>  
+            </form>
+            <p>
+                <small>Already have an account? <a href="#" onclick="toggleForms()">Log In</a> here</small>
+            </p>
+        </div>                
+        
+    </section>
+</div>
+
+<div>
+    <section id="form-container">
+        <div id="login-form"> 
+            <h1>LOG IN</h1>
+            <form method="POST">
+                <!--{% csrf_token %}-->
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">SUBMIT</button>
+            </form>
+            <p>
+                <small>Forgot Password<br>
+                Not registered yet? <a href="#" onclick="toggleForms()">Sign Up</a> here</small>
+            </p>
+        </div>
+    </section>
+</div>
+
+{% endblock %}
+
+<script>
+    function toggleForms() {
+        const loginForm = document.getElementById('login-form');
+        const registrationForm = document.getElementById('registration-form');
+        
+        if (loginForm.style.display === 'none') {
+            loginForm.style.display = 'block';
+            registrationForm.style.display = 'none';
+        } else {
+            loginForm.style.display = 'none';
+            registrationForm.style.display = 'block';
+        }
+    }
+</script>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  
+    </body>
+</html>
